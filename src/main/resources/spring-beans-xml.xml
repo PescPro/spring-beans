@@ -2,9 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
     <!--
         最简单的bean定义，只定义class,
         bean在spring容器中默认的名字为juggler
     -->
-    <bean name="juggler" class="com.pesc.study.spring.beans.xml.Juggler"></bean>
+    <bean name="duke" class="com.pesc.study.spring.beans.xml.Juggler"></bean>
+
 </beans>
