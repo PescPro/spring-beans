@@ -5,8 +5,52 @@
 
     <!--
         最简单的bean定义，只定义class,
-        bean在spring容器中默认的名字为juggler
+        1.bean在spring容器中的名字为duke
+        2.使用默认构造器
     -->
     <bean name="duke" class="com.pesc.study.spring.beans.xml.Juggler"></bean>
 
+    <!--
+        使用构造器注入
+        1.使用带有基本类型参数的构造器
+    -->
+    <bean name="jack" class="com.pesc.study.spring.beans.xml.Juggler">
+        <!--
+            name 用于指定参数的名称
+            value 用于指定参数值（基本值类型）
+         -->
+        <constructor-arg name="beanBags" value="15"></constructor-arg>
+    </bean>
+
+    <bean name="jinYePoeam" class="com.pesc.study.spring.beans.xml.JinYePoem"></bean>
+
+    <!--
+        使用构造器注入
+        1.使用引用类型参数的构造器
+    -->
+    <bean name="mice" class="com.pesc.study.spring.beans.xml.PoeticJuggler">
+        <!--
+            name 用于指定参数的名称
+            value 用于指定参数值（基本值类型）
+         -->
+        <constructor-arg name="beanBags" value="15"></constructor-arg>
+        <constructor-arg name="poem" ref="jinYePoeam"></constructor-arg>
+    </bean>
+
+    <!--
+        使用静态工厂方法创建对象
+    -->
+    <bean name="stage" factory-method="getInstance" class="com.pesc.study.spring.beans.xml.Stage"></bean>
+
+    <!--
+        bean的生命周期
+        1.singleton 默认为单例
+        2.prototype 实例化，每次从容器中取得的对象都是不同的
+        3.request 在springmvc中每一次请求创建一个对象
+        4.session 在同一个session中定义一个bean
+        5.global-session 在一个全局http session中有效
+    -->
+    <bean id="sharedTicket" class="com.pesc.study.spring.beans.xml.Ticket"></bean>
+
+    <bean id="personalTicket" class="com.pesc.study.spring.beans.xml.Ticket" scope="prototype"></bean>
 </beans>

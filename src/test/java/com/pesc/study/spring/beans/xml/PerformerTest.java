@@ -14,11 +14,29 @@ public class PerformerTest {
 
     @Autowired
     @Qualifier("duke")
-    Performer performer;
+    Performer duke;
+
+    @Autowired
+    @Qualifier("jack")
+    Performer jack;
+
+    @Autowired
+    @Qualifier("mice")
+    Performer mice;
 
     @Test
     public void testDuke() throws PerformanceException {
-        performer.perform();
+        duke.perform();
+    }
+
+    @Test
+    public void testJack() throws PerformanceException {
+        jack.perform();
+    }
+
+    @Test
+    public void testMice() throws PerformanceException{
+        mice.perform();
     }
 
 }
